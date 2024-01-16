@@ -11,12 +11,12 @@ const config: Config = {
     themes: [
       {
         lightTheme: {
-          primary: "#f4aa3a",
+          primary: "#6ec800",
           secondary: "#f4f4a1",
           accent: "#1be885",
           neutral: "#272136",
           "base-100": "#ffffff",
-          info: "#778ad4",
+          info: "#838383",
           success: "#23b893",
           warning: "#f79926",
           error: "#ea535a",
