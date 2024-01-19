@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="footer bg-neutral-900 p-10 text-primary">
+    <footer className="footer bg-neutral-900 p-10 text-primary mt-11">
       <aside>
        <Image src={logo} alt="Atlantic Logo" width={80} height={80}/>
         <p>
