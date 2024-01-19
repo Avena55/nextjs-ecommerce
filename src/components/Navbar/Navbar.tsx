@@ -4,6 +4,9 @@ import logo from "../../assets/logo.png";
 import { redirect } from "next/navigation";
 import { getCart } from "@/lib/db/cart";
 import ShoppingCartButton from "./ShoppingCartButton";
+import UserMenuButton from "./UserMenuButton";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 async function searchProducts(formData: FormData) {
   "use server";
@@ -17,7 +20,7 @@ async function searchProducts(formData: FormData) {
 
 export default async function Navbar() {
   const cart = await getCart();
-
+  const session = await getServerSession(authOptions);
 
   return (
     <div className="bg-neutral-900">
@@ -25,7 +28,7 @@ export default async function Navbar() {
         <div className="flex-1">
           <Link
             href="/"
-            className="btn btn-ghost text-xl normal-case hover:bg-transparent text-primary"
+            className="btn btn-ghost text-xl normal-case text-primary hover:bg-transparent"
           >
             <Image src={logo} alt="Atlantic logo" height={40} width={40} />
             Atlantic
@@ -42,10 +45,9 @@ export default async function Navbar() {
             </div>
           </form>
           <ShoppingCartButton cart={cart} />
+          <UserMenuButton session={session} />
         </div>
       </div>
     </div>
   );
-};
-
-
+}
