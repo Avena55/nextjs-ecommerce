@@ -2,7 +2,7 @@ import FormSubmitButton from "@/components/FormSubmitButton/FormSubmitButton";
 import prismaBase from "@/lib/db/prisma";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "../api/auth/[...nextauth]/authOptions";
 
 export const metadata = {
   title: "Add Product - Atlantic",
