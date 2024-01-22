@@ -28,7 +28,7 @@ export default async function Navbar() {
         <div className="flex-1">
           <Link
             href="/"
-            className="btn btn-ghost text-xl normal-case text-primary hover:bg-transparent"
+            className="btn btn-ghost no-animation text-xl normal-case text-primary"
           >
             <Image src={logo} alt="Atlantic logo" height={40} width={40} />
             Atlantic
