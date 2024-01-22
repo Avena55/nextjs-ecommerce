@@ -10,7 +10,7 @@ declare global {
 
 const prismaBase = globalThis.prisma ?? prismaClientSingleton();
 
-export const prisma = prismaBase.$extends({
+const prisma = prismaBase.$extends({
   query: {
     cart: {
       async update({ args, query }) {
@@ -20,5 +20,7 @@ export const prisma = prismaBase.$extends({
     },
   },
 });
+
+export default prisma
 
 if (process.env.NODE_ENV !== "production") globalThis.prisma = prismaBase;
